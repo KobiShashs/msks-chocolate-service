@@ -1,12 +1,14 @@
 package com.shasha.mskschocolateservice.services;
 
 import com.shasha.mskschocolateservice.web.model.ChocolateDto;
+import org.springframework.stereotype.Service;
 
 import java.util.UUID;
 
 /**
  * Created by kobis on 30 May, 2020
  */
+@Service
 public class ChocolateServiceImpl implements ChocolateService {
     @Override
     public ChocolateDto getChocolateByID(UUID chocolateID) {
