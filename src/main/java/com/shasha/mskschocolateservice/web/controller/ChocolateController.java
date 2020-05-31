@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.UUID;
 
 /**
@@ -31,7 +32,7 @@ public class ChocolateController {
     }
 
     @PostMapping
-    public ResponseEntity addItem(@RequestBody ChocolateDto chocolateDto) {
+    public ResponseEntity addItem(@Valid @RequestBody ChocolateDto chocolateDto) {
         ChocolateDto savedDto = chocolateService.saveNewChocolate(chocolateDto);
 
         HttpHeaders headers = new HttpHeaders();
@@ -41,7 +42,7 @@ public class ChocolateController {
     }
 
     @PutMapping({"/{chocolateID}"})
-    public ResponseEntity updateItem(@PathVariable("chocolateID") UUID chocolateID, @RequestBody ChocolateDto chocolateDto) {
+    public ResponseEntity updateItem(@PathVariable("chocolateID") UUID chocolateID, @Valid @RequestBody ChocolateDto chocolateDto) {
 
         chocolateService.updateChocolate(chocolateID, chocolateDto);
         return new ResponseEntity(HttpStatus.NO_CONTENT);
