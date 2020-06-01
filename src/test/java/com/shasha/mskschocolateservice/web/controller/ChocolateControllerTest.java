@@ -1,6 +1,7 @@
 package com.shasha.mskschocolateservice.web.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.shasha.mskschocolateservice.bootstrap.ChocolateLoader;
 import com.shasha.mskschocolateservice.services.ChocolateService;
 import com.shasha.mskschocolateservice.web.model.ChocolateDto;
 import com.shasha.mskschocolateservice.web.model.ChocolateType;
@@ -50,17 +51,18 @@ class ChocolateControllerTest {
     ChocolateDto getValidDto() {
         return ChocolateDto.builder()
                 .id(UUID.randomUUID())
-                .chocolateName("Pikkolo")
+                .chocolateName("Bounty")
+                .chocolateSlogan("coconut palms like")
                 .chocolateType(ChocolateType.MILK)
-                .price(new BigDecimal(2.99))
-                .upc(123456789L)
+                .price(new BigDecimal("11.95"))
+                .upc(ChocolateLoader.CHOCOLATE_2_UPC)
                 .build();
     }
 
     @Test
     void getItemById() throws Exception {
 
-        //  given(chocolateService.getChocolateByID(any(UUID.class))).willReturn(getValidDto());
+        given(chocolateService.getChocolateByID(any(UUID.class))).willReturn(getValidDto());
 
         ChocolateDto chocolateDto = getValidDto();
         mockMvc.perform(get("/api/v1/chocolate/" + UUID.randomUUID()).accept(MediaType.APPLICATION_JSON))

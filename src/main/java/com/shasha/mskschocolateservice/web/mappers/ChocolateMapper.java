@@ -12,5 +12,5 @@ public interface ChocolateMapper {
 
     ChocolateDto chocolateToChocolateDto(Chocolate chocolate);
 
-    Chocolate chocolateDtoTohChocolate(ChocolateDto dto);
+    Chocolate chocolateDtoToChocolate(ChocolateDto dto);
 }

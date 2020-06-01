@@ -1,5 +1,6 @@
 package com.shasha.mskschocolateservice.domain;
 
+import com.shasha.mskschocolateservice.web.model.ChocolateType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -41,8 +42,10 @@ public class Chocolate {
     private String chocolateName;
     private String chocolateSlogan;
 
+    private ChocolateType chocolateType;
+
     @Column(unique = true)
-    private Long upc;
+    private String upc;
     private BigDecimal price;
     private Integer minOnHand;
     private Integer quantityToCreate;

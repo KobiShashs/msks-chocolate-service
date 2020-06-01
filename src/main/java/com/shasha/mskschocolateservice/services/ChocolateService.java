@@ -12,7 +12,7 @@ public interface ChocolateService {
 
     ChocolateDto saveNewChocolate(ChocolateDto chocolateDto);
 
-    void updateChocolate(UUID chocolateID, ChocolateDto chocolateDto);
+    ChocolateDto updateChocolate(UUID chocolateID, ChocolateDto chocolateDto);
 
     void deleteById(UUID chocolateID);
 }

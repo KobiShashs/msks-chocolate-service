@@ -38,12 +38,15 @@ public class ChocolateDto {
     @NotBlank
     private String chocolateName;
 
+    @NotBlank
+    private String chocolateSlogan;
+
     @NotNull
     private ChocolateType chocolateType;
 
-    @Positive
+    //@Positive
     @NotNull
-    private Long upc;
+    private String upc;
 
     @Positive
     @NotNull
