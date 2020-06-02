@@ -9,6 +9,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Null;
 import javax.validation.constraints.Positive;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 import java.util.UUID;
@@ -17,6 +18,7 @@ import java.util.UUID;
  * Created by kobis on 30 May, 2020
  */
 
+@XmlRootElement
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

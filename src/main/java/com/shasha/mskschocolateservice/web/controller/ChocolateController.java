@@ -13,6 +13,7 @@ import java.util.UUID;
 /**
  * Created by kobis on May, 2020
  */
+
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/chocolate")
 @RestController
@@ -25,6 +26,11 @@ public class ChocolateController {
 
     @GetMapping({"/{chocolateID}"})
     public ResponseEntity<ChocolateDto> getItem(@PathVariable("chocolateID") UUID chocolateID) {
+        return new ResponseEntity<>(chocolateService.getChocolateByID(chocolateID), HttpStatus.OK);
+    }
+
+    @GetMapping(value = {"xml/{chocolateID}"}, produces = {"application/xml"})
+    public ResponseEntity<ChocolateDto> getItem2(@PathVariable("chocolateID") UUID chocolateID) {
         return new ResponseEntity<>(chocolateService.getChocolateByID(chocolateID), HttpStatus.OK);
     }
 

@@ -40,14 +40,11 @@ public class ChocolateServiceImpl implements ChocolateService {
         chocolate.setUpc(chocolateDto.getUpc());
 
         return chocolateMapper.chocolateToChocolateDto(chocolate);
-
-
     }
 
     @Override
     public void deleteById(UUID chocolateID) {
         Chocolate chocolate = chocolateRepository.findById(chocolateID).orElseThrow(NotFoundException::new);
         chocolateRepository.deleteById(chocolateID);
-
     }
 }

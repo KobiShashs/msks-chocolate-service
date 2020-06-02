@@ -43,6 +43,7 @@ public class ChocolateLoader implements CommandLineRunner {
                     .upc(CHOCOLATE_1_UPC)
                     .build());
 
+
             chocolateRepository.save(Chocolate.builder()
                     .chocolateName("Bounty")
                     .chocolateSlogan("coconut palms like")
@@ -64,6 +65,8 @@ public class ChocolateLoader implements CommandLineRunner {
                     .build());
         }
 
-        System.out.println("Loaded = " + chocolateRepository.count());
+        System.out.println(String.format("Loaded %d new beans", chocolateRepository.count()));
+        System.out.println(chocolateRepository.findAll());
+
     }
 }

@@ -7,6 +7,8 @@ import org.mapstruct.Mapper;
 /**
  * Created by kobis on 31 May, 2020
  */
+
+//@Mapper
 @Mapper(uses = DateMapper.class)
 public interface ChocolateMapper {
 
